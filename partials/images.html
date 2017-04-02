@@ -1,0 +1,12 @@
+<h3>All images :</h3>
+
+<div class="image-container" ng-repeat="image in vm.allImages">
+    <div class="image-header">
+        <img src="https://www.wpfreeware.com/wp-content/uploads/2014/09/placeholder-images.jpg"></img>
+        <a ng-href="{{image.image}}">{{image.image}}</a>
+    <div class="image-body">
+        <h2>{{image.title}}</h2>
+        <p>{{image.description}}</p>
+    </div>
+</div>
+

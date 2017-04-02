@@ -8,35 +8,34 @@
             <li><a href="#!/"><i class="fa fa-home"></i>Home</a></li>
             <li><a href="#!/users"><i class="fa fa-comment"></i>Users</a></li>
             <li><a href="#!/articles"><i class="fa fa-shield"></i> Articles</a></li>
+            <li><a href="#!/images"><i class="fa fa-shield"></i> Images</a></li>
             <li><a href="#!/videos"><i class="fa fa-shield"></i> Videos</a></li>
             <li><a href="#!/login"><i class="fa fa-shield"></i> Logout</a></li>
         </ul>
     </div>
 </nav>
 
-<h3>All users :</h3>
+<h3>All images :</h3>
+<a type="button" class="btn btn-success" href="#!/addImage"> Create Image</a>
 
 <div class="table-responsive table-striped table-hover">          
   <table class="table">
     <thead>
       <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Username</th>
-        <th>Password</th>
-        <th>Actions</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Image URL</th>
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="user in vm.allUsers">
+      <tr ng-repeat="image in vm.allImages">
           <form>
-            <td><input class="input-invisible" ng-model="user.firstName"></td>
-            <td><input class="input-invisible" ng-model="user.lastName"></td>
-            <td>{{user.username}}</td>
-            <td>{{user.password}}</td>
+            <td><input class="input-invisible" ng-model="image.title"></td>
+            <td><input class="input-invisible" ng-model="image.description"></td>
+            <td><input class="input-invisible" ng-model="image.image"></td>
             <td>
-                <button type="button" class="btn btn-success" ng-click="vm.updateUser(user)"> Update</button>
-                <button type="button" class="btn btn-danger" ng-click="vm.deleteUser(user.id)"> Delete</button>
+                <button type="button" class="btn btn-success" ng-click="vm.updateVideo(image)"> Update</button>
+                <button type="button" class="btn btn-danger" ng-click="vm.deleteVideo(image.id)"> Delete</button>
             </td>
          </form>
       </tr>

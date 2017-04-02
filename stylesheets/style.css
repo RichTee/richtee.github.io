@@ -59,3 +59,28 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
     width: inherit;
     min-height: 50px;
 }
+
+.image-container {
+    width: 100%;
+    min-height: 150px;
+    border-bottom: 2px dotted grey;
+}
+
+.image-header {
+    width: inherit;
+    min-height: 50px;
+}
+
+.image-body {
+    width: inherit;
+    min-height: 50px;
+}
+
+.image-body h2 {
+    font-weight: bold;
+}
+
+.image-footer {
+    width: inherit;
+    min-height: 50px;
+}

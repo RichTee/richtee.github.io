@@ -9,7 +9,7 @@
         $routeProvider
             .when('/', {
                 controller: 'HomeController',
-                templateUrl: 'partials/home.html',
+                templateUrl: 'partials/admin/home.html',
                 controllerAs: 'vm'
             })
 
@@ -27,7 +27,7 @@
 
             .when('/users', {
                 controller: 'HomeController',
-                templateUrl: 'partials/users.html',
+                templateUrl: 'partials/admin/users.html',
                 controllerAs: 'vm'
             })
             
@@ -48,6 +48,25 @@
                 templateUrl: 'partials/admin/addArticle.html',
                 controllerAs: 'vm'
             })
+
+            .when('/images', {
+                controller: 'ImageController',
+                templateUrl: 'partials/admin/images.html',
+                controllerAs: 'vm'
+            })
+
+            .when('/clientImages', {
+                controller: 'ImageController',
+                templateUrl: 'partials/images.html',
+                controllerAs: 'vm'
+            })
+
+            .when('/addImage', {
+                controller: 'ImageController',
+                templateUrl: 'partials/admin/addImage.html',
+                controllerAs: 'vm'
+            })
+
 
             .when('/videos', {
                 controller: 'VideoController',

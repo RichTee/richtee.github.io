@@ -15,28 +15,29 @@
     </div>
 </nav>
 
-<h3>All videos :</h3>
-<a type="button" class="btn btn-success" href="#!/addVideo"> Create Video</a>
+<h3>All users :</h3>
 
 <div class="table-responsive table-striped table-hover">          
   <table class="table">
     <thead>
       <tr>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Video URL</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Username</th>
+        <th>Password</th>
         <th>Actions</th>
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="video in vm.allVideos">
+      <tr ng-repeat="user in vm.allUsers">
           <form>
-            <td><input class="input-invisible" ng-model="video.title"></td>
-            <td><input class="input-invisible" ng-model="video.description"></td>
-            <td><input class="input-invisible" ng-model="video.source"></td>
+            <td><input class="input-invisible" ng-model="user.firstName"></td>
+            <td><input class="input-invisible" ng-model="user.lastName"></td>
+            <td>{{user.username}}</td>
+            <td>{{user.password}}</td>
             <td>
-                <button type="button" class="btn btn-success" ng-click="vm.updateVideo(video)"> Update</button>
-                <button type="button" class="btn btn-danger" ng-click="vm.deleteVideo(video.id)"> Delete</button>
+                <button type="button" class="btn btn-success" ng-click="vm.updateUser(user)"> Update</button>
+                <button type="button" class="btn btn-danger" ng-click="vm.deleteUser(user.id)"> Delete</button>
             </td>
          </form>
       </tr>
