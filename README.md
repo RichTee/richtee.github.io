@@ -9,6 +9,6 @@ single-page-app
 2. Karma
 
 #Instructions
-1. npm install -g http-server
+1. (sudo) npm install -g http-server
 2. npm install
-3. npm install -g karma-cli
+3. (sudo) npm install -g karma-cli
