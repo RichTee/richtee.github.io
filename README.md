@@ -13,3 +13,4 @@ single-page-app
 1. (sudo) npm install -g http-server
 2. npm install
 3. (sudo) npm install -g karma-cli
+4. http://www.protractortest.org/#/
