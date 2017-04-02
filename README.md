@@ -3,6 +3,7 @@ single-page-app
 
 #Requirements
 1. NodeJS
+2. Chrome / Chromium for testing
 
 #Node Modules
 1. http-server
