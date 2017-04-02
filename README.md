@@ -10,6 +10,5 @@ single-page-app
 
 #Instructions
 1. npm install -g http-server
-2. npm install -g karma --save-dev
-3. npm install karma-jasmine jasmine-core karma-chrome-launcher --save-dev (or npm install)
-4. npm install -g karma-cli
+2. npm install
+3. npm install -g karma-cli
