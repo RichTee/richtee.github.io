@@ -3,13 +3,14 @@ single-page-app
 
 #Requirements
 1. NodeJS
+2. Chrome / Chromium for testing
 
 #Node Modules
 1. http-server
 2. Karma
 
 #Instructions
-1. npm install -g http-server
-2. npm install -g karma --save-dev
-3. npm install karma-jasmine jasmine-core karma-chrome-launcher --save-dev (or npm install)
-4. npm install -g karma-cli
+1. (sudo) npm install -g http-server
+2. npm install
+3. (sudo) npm install -g karma-cli
+4. http://www.protractortest.org/#/
