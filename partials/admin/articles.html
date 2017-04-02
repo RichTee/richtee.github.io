@@ -1,0 +1,46 @@
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+        <a class="navbar-brand" href="/">The restricted area</a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#!/"><i class="fa fa-home"></i>Home</a></li>
+            <li><a href="#!/users"><i class="fa fa-comment"></i>Users</a></li>
+            <li><a href="#!/articles"><i class="fa fa-shield"></i> Articles</a></li>
+            <li><a href="#!/videos"><i class="fa fa-shield"></i> Videos</a></li>
+            <li><a href="#!/login"><i class="fa fa-shield"></i> Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+<h3>All articles :</h3>
+<a type="button" class="btn btn-success" ng-href="#!/addArticle"> Create Article</a>
+
+<div class="table-responsive table-striped table-hover">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Image URL</th>
+        <th>Author</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="article in vm.allArticles">
+          <form>
+            <td><input class="input-invisible" ng-model="article.title"></td>
+            <td><input class="input-invisible" ng-model="article.description"></td>
+            <td><input class="input-invisible" ng-model="article.image"></td>
+            <td><input class="input-invisible" ng-model="article.author"></td>
+            <td>
+                <button type="button" class="btn btn-success" ng-click="vm.updateArticle(article)"> Update</button>
+                <button type="button" class="btn btn-danger" ng-click="vm.deleteArticle(article.id)"> Delete</button>
+            </td>
+         </form>
+      </tr>
+    </tbody>
+  </table>
+</div>

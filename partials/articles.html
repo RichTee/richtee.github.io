@@ -1,0 +1,13 @@
+<h3>All articles :</h3>
+
+<div class="article-container" ng-repeat="article in vm.allArticles">
+  <div class="article-header">
+    <img src="https://www.friendlyshade.com/img/404-not-found.jpg" ng-src="{{article.source}}" />
+  <div class="article-body">
+    <h2>{{article.title}}</h2>
+    <p>{{article.description}}</p>
+  </div>
+  <div class="article-footer">
+    <p>By: {{article.author}}</p>
+  </div>
+</div>

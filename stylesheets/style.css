@@ -1,0 +1,61 @@
+﻿a {
+    cursor: pointer;
+}
+
+.input-invisible{
+    background: transparent;
+    border: none;
+}
+
+textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {   
+    border-color: rgba(229, 103, 23, 0.8);
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px rgba(229, 103, 23, 0.6);
+    outline: 0 none;
+    background: rgba(255, 255, 255, 0.5);
+    padding-left: 10px;
+}
+
+.video-container {
+    width: 100%;
+    min-height: 150px;
+    border-bottom: 2px dotted grey;
+}
+
+.video-header {
+    width: inherit;
+    min-height: 50px;
+}
+
+.video-body {
+    width: inherit;
+    min-height: 50px;
+}
+
+.video-body h2 {
+    font-weight: bold;
+}
+
+.article-container {
+    width: 100%;
+    min-height: 150px;
+    border-bottom: 2px dotted grey;
+}
+
+.article-header {
+    width: inherit;
+    min-height: 50px;
+}
+
+.article-body {
+    width: inherit;
+    min-height: 50px;
+}
+
+.article-body h2 {
+    font-weight: bold;
+}
+
+.article-footer {
+    width: inherit;
+    min-height: 50px;
+}

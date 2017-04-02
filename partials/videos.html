@@ -1,0 +1,12 @@
+<h3>All videos :</h3>
+
+<div class="video-container" ng-repeat="video in vm.allVideos">
+  <div class="video-header">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/NpEaa2P7qZI" frameborder="0" allowfullscreen></iframe>
+  <a ng-href="{{video.source}}">{{video.source}}</a>
+  <div class="video-body">
+    <h2>{{video.title}}</h2>
+    <p>{{video.description}}</p>
+  </div>
+</div>
+

@@ -1,0 +1,45 @@
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+        <a class="navbar-brand" href="/">The restricted area</a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#!/"><i class="fa fa-home"></i>Home</a></li>
+            <li><a href="#!/users"><i class="fa fa-comment"></i>Users</a></li>
+            <li><a href="#!/articles"><i class="fa fa-shield"></i> Articles</a></li>
+            <li><a href="#!/videos"><i class="fa fa-shield"></i> Videos</a></li>
+            <li><a href="#!/login"><i class="fa fa-shield"></i> Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="col-md-6 col-md-offset-3">
+    <h2>Create Article</h2>
+    <form name="form" ng-submit="vm.createArticle()" role="form">
+        <div class="form-group">
+            <label for="title">Article Title</label>
+            <input type="text" name="title" id="title" class="form-control" ng-model="vm.article.title" required />
+            <span class="help-block">Article Title is required</span>
+        </div>
+        <div class="form-group">
+            <label for="description">Article Description</label>
+            <textarea name="description" id="description" class="form-control" ng-model="vm.article.description" required />
+            <span class="help-block">Article Description is required</span>
+        </div>
+        <div class="form-group">
+            <label for="image">Image Link</label>
+            <input type="text" name="image" id="image" class="form-control" ng-model="vm.article.image" required />
+            <span class="help-block">Image is required</span>
+        </div>
+        <div class="form-group">
+            <label for="author">Author</label>
+            <input type="text" name="author" id="author" class="form-control" ng-model="vm.article.author" required />
+            <span class="help-block">Author is required</span>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Create</button>
+            <a href="#!/articles" class="btn btn-link">Cancel</a>
+        </div>
+    </form>
+</div>

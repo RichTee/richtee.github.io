@@ -1,50 +1,64 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
-<!-- define angular app -->
-<html ng-app="scotchApp">
-
+<html ng-app="single-page-app">
 <head>
-  <!-- SCROLLS -->
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+    <meta charset="utf-8" />
+    <title>Simple single Page App</title>
 
-  <!-- SPELLS -->
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
-  <script src="script.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link href="stylesheets/style.css" rel="stylesheet" />
+
 </head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+            <a class="navbar-brand" href="/">Simple Page App</a>
+            </div>
 
-<!-- define angular controller -->
-<body ng-controller="mainController">
+            <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="#!/clientArticles"><i class="fa fa-comment"></i> Articles</a></li>
+            <li><a href="#!/clientVideos"><i class="fa fa-comment"></i> Videos</a></li>
+            <li><a href="#!/login"><i class="fa fa-shield"></i> Login</a></li>
+            <li><a href="#!/register"><i class="fa fa-shield"></i> Register</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <nav class="navbar navbar-default">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/">Angular Routing Example</a>
-      </div>
-
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-        <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
-        <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
-      </ul>
+    <div class="jumbotron">
+        <div class="container">
+            <div class="col-sm-8 col-sm-offset-2">
+                <div ng-class="{ 'alert': notification, 'alert-success': notification.type === 'success', 'alert-danger': notification.type === 'error' }" ng-if="notification" ng-bind="notification.message"></div>
+                <div ng-view></div>
+            </div>
+        </div>
     </div>
-  </nav>
-
-  <div id="main">
-  
-    <!-- angular templating -->
-		<!-- this is where content will be injected -->
-    <div ng-view></div>
     
-  </div>
-  
-  <footer class="text-center">
-    <p>View the tutorial on <a href="http://scotch.io/tutorials/javascript/single-page-apps-with-angularjs-routing-and-templating">Scotch.io</a></p>
-  
-    <p>View a tutorial on <a href="http://scotch.io/tutorials/javascript/animating-angularjs-apps-ngview">Animating Your Angular Single Page App</a></p>
-  </footer>
-  
-</body>
+    <footer class="text-center">
+        <p>This is a <a href="#">Simple single page App</a></p>
+    </footer>
 
+    <!-- Scripts -->
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//code.angularjs.org/1.6.0/angular.min.js"></script>
+    <script src="//code.angularjs.org/1.6.0/angular-route.min.js"></script>
+    <script src="//code.angularjs.org/1.6.0/angular-cookies.min.js"></script>
+
+    <!-- Main -->
+    <script src="app.js"></script>
+    <!-- Services -->
+    <script src="js/services/authentication.js"></script>
+    <script src="js/services/notification.js"></script>
+    <script src="js/services/user.js"></script>
+    <script src="js/services/article.js"></script>
+    <script src="js/services/video.js"></script>
+    <!-- Controllers -->
+    <script src="js/controllers/user.js"></script>
+    <script src="js/controllers/article.js"></script>
+    <script src="js/controllers/video.js"></script>
+    <script src="js/controllers/login.js"></script>
+    <script src="js/controllers/register.js"></script>
+</body>
 </html>
