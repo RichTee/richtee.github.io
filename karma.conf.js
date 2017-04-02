@@ -15,13 +15,25 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      './node_modules/angular/angular.js',                             // angular
-      './node_modules/angular-ui-router/release/angular-ui-router.js', // ui-router
-      './node_modules/angular-mocks/angular-mocks.js',                 // loads our modules for tests
-      './js/services/article.js',
+      './node_modules/angular/angular.js',                              
+      './node_modules/angular-route/angular-route.js',                
+      './node_modules/angular-cookies/angular-cookies.js',                   
+      './node_modules/angular-ui-router/release/angular-ui-router.js',  
+      './node_modules/angular-mocks/angular-mocks.js',                  
       './app.js',
-      './tests/unit/controllers/example.js',
-      './tests/unit/services/article.js'
+      './js/services/article.js',
+      './js/services/authentication.js',
+      './js/services/image.js',
+      './js/services/notification.js',
+      './js/services/video.js',
+      './js/services/user.js',
+      './tests/unit/services/article-spec.js',
+      './tests/unit/services/authentication-spec.js',
+      './tests/unit/services/image-spec.js',
+      './tests/unit/services/notification-spec.js',
+      './tests/unit/services/video-spec.js',
+      './tests/unit/services/user-spec.js',
+      //'./tests/unit/controllers/example.js',
     ],
 
 
