@@ -27,13 +27,13 @@
 
             .when('/users', {
                 controller: 'HomeController',
-                templateUrl: 'partials/admin/users.html',
+                templateUrl: 'partials/admin/user/users.html',
                 controllerAs: 'vm'
             })
             
             .when('/articles', {
                 controller: 'ArticleController',
-                templateUrl: 'partials/admin/articles.html',
+                templateUrl: 'partials/admin/article/articles.html',
                 controllerAs: 'vm'
             })
 
@@ -45,13 +45,13 @@
 
             .when('/addArticle', {
                 controller: 'ArticleController',
-                templateUrl: 'partials/admin/addArticle.html',
+                templateUrl: 'partials/admin/article/addArticle.html',
                 controllerAs: 'vm'
             })
 
             .when('/images', {
                 controller: 'ImageController',
-                templateUrl: 'partials/admin/images.html',
+                templateUrl: 'partials/admin/image/images.html',
                 controllerAs: 'vm'
             })
 
@@ -63,14 +63,14 @@
 
             .when('/addImage', {
                 controller: 'ImageController',
-                templateUrl: 'partials/admin/addImage.html',
+                templateUrl: 'partials/admin/image/addImage.html',
                 controllerAs: 'vm'
             })
 
 
             .when('/videos', {
                 controller: 'VideoController',
-                templateUrl: 'partials/admin/videos.html',
+                templateUrl: 'partials/admin/video/videos.html',
                 controllerAs: 'vm'
             })
 
@@ -82,7 +82,7 @@
 
             .when('/addVideo', {
                 controller: 'VideoController',
-                templateUrl: 'partials/admin/addVideo.html',
+                templateUrl: 'partials/admin/video/addVideo.html',
                 controllerAs: 'vm'
             })
 

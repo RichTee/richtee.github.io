@@ -25,7 +25,8 @@
         <th>ID</th>
         <th>Title</th>
         <th>Description</th>
-        <th>Image URL</th>
+        <th>Image</th>
+        <th>Video</th>
         <th>Author</th>
         <th>Actions</th>
       </tr>
@@ -36,7 +37,8 @@
             <td>{{article.id}}</td>
             <td><input class="input-invisible" ng-model="article.title"></td>
             <td><input class="input-invisible" ng-model="article.description"></td>
-            <td><input class="input-invisible" ng-model="article.image"></td>
+            <td><input class="input-invisible" ng-model="article.image.title"></td>
+            <td><input class="input-invisible" ng-model="article.video.title"></td>
             <td><input class="input-invisible" ng-model="article.author"></td>
             <td>
                 <button type="button" class="btn btn-success" ng-click="vm.updateArticle(article)"> Update</button>

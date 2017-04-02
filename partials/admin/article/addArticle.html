@@ -29,14 +29,19 @@
             <span class="help-block">Article Description is required</span>
         </div>
         <div class="form-group">
-            <label for="image">Image Link</label>
+            <label for="image">Image ID</label>
             <input type="text" name="image" id="image" class="form-control" ng-model="vm.article.image" required />
-            <span class="help-block">Image is required</span>
+            <span class="help-block">Image ID is required</span>
         </div>
         <div class="form-group">
-            <label for="author">Author</label>
+            <label for="image">Video ID</label>
+            <input type="text" name="video" id="video" class="form-control" ng-model="vm.article.video" required />
+            <span class="help-block">Video ID is required</span>
+        </div>
+        <div class="form-group">
+            <label for="author">Author ID</label>
             <input type="text" name="author" id="author" class="form-control" ng-model="vm.article.author" required />
-            <span class="help-block">Author is required</span>
+            <span class="help-block">Author / user ID is required</span>
         </div>
         <div class="form-actions">
             <button type="submit" class="btn btn-primary">Create</button>

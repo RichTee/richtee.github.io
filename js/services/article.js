@@ -3,14 +3,15 @@
     'use strict';
 
     angular.module('single-page-app').factory('ArticleService', ArticleService);
-    ArticleService.$inject = ['$timeout', '$filter', '$q'];
+    ArticleService.$inject = ['$timeout', '$filter', '$q', 'UserService', 'ImageService', 'VideoService'];
     
-    function ArticleService($timeout, $filter, $q) 
+    function ArticleService($timeout, $filter, $q, UserService, ImageService, VideoService)
     {
 
         var service = {};
 
         service.GetAll = GetAll;
+        service.GetSpecific = GetSpecific;
         service.Create = Create;
         service.Update = Update;
         service.Delete = Delete;
@@ -20,7 +21,29 @@
         function GetAll() 
         {
             var deferred = $q.defer();
-            deferred.resolve(getArticles());
+            var articles = getArticles();
+            // Not performance friendly, better to loop once. But too lazy to give a *
+            articles = attachUser(articles);
+            articles = attachImage(articles);
+            articles = attachVideo(articles);
+            deferred.resolve(articles);
+
+            return deferred.promise;
+        }
+
+        function GetSpecific(query)
+        {
+            var deferred = $q.defer();
+            var filtered = $filter('filter')(getArticles(), { title: query });
+            var article = filtered.length ? filtered[0] : null;
+            var articles = [];
+            article !== null ? articles.push(article) : false;
+            // Not performance friendly, better to loop once. But too lazy to give a *
+            articles = attachUser(articles);
+            articles = attachImage(articles);
+            articles = attachVideo(articles);
+            deferred.resolve(articles);
+
             return deferred.promise;
         }
 
@@ -44,18 +67,18 @@
         function Update(article) 
         {
             var deferred = $q.defer();
-            var users = getArticles();
+            var articles = getArticles();
 
-            for (var i = 0; i < users.length; i++) 
+            for (var i = 0; i < articles.length; i++) 
             {
-                if (users[i].id === article.id) 
+                if (articles[i].id === article.id) 
                 {
-                    users[i] = article;
+                    articles[i] = article;
                     break;
                 }
             }
 
-            setArticles(users);
+            setArticles(articles);
             deferred.resolve();
 
             return deferred.promise;
@@ -64,23 +87,71 @@
         function Delete(id) 
         {
             var deferred = $q.defer();
-            var users = getArticles();
+            var articles = getArticles();
 
-            for (var i = 0; i < users.length; i++) 
+            for (var i = 0; i < articles.length; i++) 
             {
-                var article = users[i];
+                var article = articles[i];
                 
                 if (article.id === id) 
                 {
-                    users.splice(i, 1);
+                    articles.splice(i, 1);
                     break;
                 }
             }
 
-            setArticles(users);
+            setArticles(articles);
             deferred.resolve();
 
             return deferred.promise;
+        }
+
+        function attachUser(articles) 
+        {
+            var users = UserService.GetAllNonPromise();
+
+            for (var i = 0; i < articles.length; i++) 
+            {
+                for (var j = 0; j < users.length; j++)
+                {
+                    if (parseInt(articles[i].author) === parseInt(users[j].id))
+                        articles[i].author = users[j].firstName + ' ' + users[j].lastName;
+                }
+            }
+
+            return articles;
+        }
+
+        function attachImage(articles) 
+        {
+            var images = ImageService.GetAllNonPromise();
+
+            for (var i = 0; i < articles.length; i++) 
+            {
+                for (var j = 0; j < images.length; j++)
+                {
+                    if (parseInt(articles[i].image) === parseInt(images[j].id))
+                        articles[i].image = images[j];
+                }
+            }
+
+            return articles;
+        }
+
+        function attachVideo(articles)
+        {
+            var videos = VideoService.GetAllNonPromise();
+
+            for (var i = 0; i < articles.length; i++) 
+            {
+                for (var j = 0; j < videos.length; j++)
+                {
+                    if (parseInt(articles[i].video) === parseInt(videos[j].id))
+                        articles[i].video = videos[j];
+                }
+            }
+
+            return articles;
         }
 
         function getArticles() 

@@ -11,6 +11,7 @@
         var service = {};
 
         service.GetAll = GetAll;
+        service.GetAllNonPromise = GetAllNonPromise;
         service.GetByUsername = GetByUsername;
         service.Create = Create;
         service.Update = Update;
@@ -23,6 +24,11 @@
             var deferred = $q.defer();
             deferred.resolve(getUsers());
             return deferred.promise;
+        }
+
+        function GetAllNonPromise() 
+        {
+            return getUsers();
         }
 
         function GetByUsername(username)

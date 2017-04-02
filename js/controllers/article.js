@@ -11,6 +11,7 @@
 
         vm.article = null;
         vm.allArticles = [];
+        vm.searchArticle = searchArticle;
         vm.createArticle = createArticle;
         vm.updateArticle = updateArticle;
         vm.deleteArticle = deleteArticle;
@@ -20,6 +21,14 @@
         function loadAllArticles() 
         {
             ArticleService.GetAll()
+            .then(function (articles) {
+                vm.allArticles = articles;
+            });
+        }
+
+        function searchArticle(query)
+        {
+            ArticleService.GetSpecific(query)
             .then(function (articles) {
                 vm.allArticles = articles;
             });

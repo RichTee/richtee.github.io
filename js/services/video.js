@@ -12,6 +12,7 @@
         var service = {};
 
         service.GetAll = GetAll;
+        service.GetAllNonPromise = GetAllNonPromise;
         service.Create = Create;
         service.Update = Update;
         service.Delete = Delete;
@@ -23,6 +24,11 @@
             var deferred = $q.defer();
             deferred.resolve(getVideos());
             return deferred.promise;
+        }
+
+        function GetAllNonPromise() 
+        {
+            return getVideos();
         }
 
         function Create(video) 

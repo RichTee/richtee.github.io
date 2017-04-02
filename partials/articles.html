@@ -1,10 +1,20 @@
 <h3>All articles :</h3>
 
-<div class="article-container" ng-repeat="article in vm.allArticles">
+<form>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon"><i class="fa fa-search"></i></div>
+        <input type="text" class="form-control" placeholder="Search Articles by title" ng-model="searchArticle">
+    </div>
+  </div>
+</form>
+
+<div class="article-container" ng-repeat="article in vm.allArticles | filter:searchArticle" >
   <div class="article-header">
-    <img src="https://www.friendlyshade.com/img/404-not-found.jpg" ng-src="{{article.source}}" />
-  <div class="article-body">
+      <img src="https://www.wpfreeware.com/wp-content/uploads/2014/09/placeholder-images.jpg"></img>
     <h2>{{article.title}}</h2>
+    <p>Image: {{article.image.image}}</p>
+    <p>Video: {{article.video.source}}</p>
     <p>{{article.description}}</p>
   </div>
   <div class="article-footer">
